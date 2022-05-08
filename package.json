@@ -1,0 +1,15 @@
+{
+  "name": "express-rapid",
+  "version": "1.0.1",
+  "description": "This Framwork Based On Express js And Loaded With Amazing Features. For Fast And Rapid Development of Your Project.",
+  "main": "./bin/generate-app.js",
+  "bin": {
+    "express-rapid": "./bin/generate-app.js"
+  },
+  "scripts": {
+    "express-rapid": "node ./bin/generate-app.js"
+  },
+  "author": "Harshil Kaneria",
+  "license": "MIT",
+  "dependencies": {}
+}
