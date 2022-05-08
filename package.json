@@ -1,6 +1,6 @@
 {
   "name": "express-rapid",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "This Framwork Based On Express js And Loaded With Amazing Features. For Fast And Rapid Development of Your Project.",
   "main": "./bin/generate-app.js",
   "bin": {

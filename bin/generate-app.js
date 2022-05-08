@@ -4,9 +4,9 @@ const path = require('path');
 const fs = require('fs');
 
 if (process.argv.length < 3) {
-    console.log('You have to provide a name to your app.');
-    console.log('For example :');
-    console.log('npx express-rapid my-app');
+    console.log('\nYou have to provide a name to your app.');
+    console.log('\nFor example :');
+    console.log('\nnpx express-rapid my-app\n');
     process.exit(1);
 }
 
@@ -20,7 +20,7 @@ try {
   fs.mkdirSync(projectPath);
 } catch (err) {
   if (err.code === 'EEXIST') {
-    console.log(`The file ${projectName} already exist in the current directory, please give it another name.`);
+    console.log(`\nThe file ${projectName} already exist in the current directory, please give it another name.`);
   } else {
     console.log(error);
   }
@@ -31,20 +31,21 @@ try {
 async function main() {
     try {
 
-      console.log('Downloading files...');
+      console.log('\nDownloading files...');
       execSync(`git clone --depth 1 ${git_repo} ${projectPath}`);
 
       process.chdir(projectPath);
 
-      console.log('Installing dependencies...');
+      // console.log('Installing dependencies...');
       // execSync('npm install');
 
       // console.log('Removing useless files');
       // execSync('npx rimraf ./.git');
       fs.rmdirSync(path.join(projectPath, 'bin'), { recursive: true});
 
-      console.log(`cd ${projectName} && npm install && npm run dev`);
-      console.log('The installation is done, this is ready to use !');
+      console.log('\nThe installation is done, this is ready to use !');
+      console.log(`\nRun This Command To Installing dependencies and Run Server `);
+      console.log(`\ncd ${projectName} && npm install && npm run dev`);
 
     } catch (error) {
       console.log(error);
