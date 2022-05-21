@@ -41,11 +41,11 @@ async function main() {
 
       // console.log('Removing useless files');
       // execSync('npx rimraf ./.git');
-      fs.rmdirSync(path.join(projectPath, 'bin'), { recursive: true});
-
-      console.log('\nThe installation is done, this is ready to use !');
-      console.log(`\nRun This Command To Installing dependencies and Run Server `);
-      console.log(`\ncd ${projectName} && npm install && npm run dev`);
+      fs.rm(path.join(projectPath, 'bin'), { recursive: true},()=>{
+        console.log('\nThe installation is done, this is ready to use !');
+        console.log(`\nRun This Command To Installing dependencies and Run Server `);
+        console.log(`\ncd ${projectName} && npm install && npm run dev`);
+      });
 
     } catch (error) {
       console.log(error);
